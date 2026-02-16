@@ -1,1 +1,1571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Measure3 Consulting | Marketing Systems for Home Service Businesses | Huntsville, AL</title>
+<meta name="description" content="Measure3 builds and manages marketing systems for home service businesses in Huntsville, AL — Google Ads, GoHighLevel automation, funnels, and lead follow-up. Get your free marketing audit.">
+<meta name="keywords" content="Huntsville marketing consultant, home service marketing, GoHighLevel setup, Google Ads management, HVAC marketing, roofing marketing, plumbing marketing, local service business marketing, lead generation Huntsville AL">
+<meta property="og:title" content="Measure3 Consulting | Marketing Systems for Home Service Businesses">
+<meta property="og:description" content="We build and manage marketing systems for home service businesses — the same systems we use to run a 7-figure operation. Funnels, automations, follow-up, ads, and everything in between.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Measure3 Consulting | Marketing Systems for Home Service Businesses">
+<meta name="twitter:description" content="Stop losing leads. Start closing jobs. Free marketing audit for home service businesses in Huntsville, AL.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='16' y='22' font-family='sans-serif' font-size='16' font-weight='bold' fill='white' text-anchor='middle'>M3</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Measure3 Consulting, LLC",
+  "description": "Marketing systems consulting for home service businesses — Google Ads, GoHighLevel automation, funnels, and lead follow-up.",
+  "url": "https://measure3.com",
+  "email": "measure3consulting@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Huntsville",
+    "addressRegion": "AL",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Huntsville, Alabama"
+  },
+  "priceRange": "$$",
+  "serviceType": ["Marketing Consulting", "Google Ads Management", "GoHighLevel Setup", "Landing Page Design", "Lead Generation"]
+}
+</script>
+<style>
+:root {
+  --bg: #0a0f1a;
+  --blue: #2563eb;
+  --blue-hover: #3b82f6;
+  --gold: #e5a220;
+  --gold-hover: #f0b840;
+  --text: #f0f0f0;
+  --muted: #94a3b8;
+  --card: #111827;
+  --border: #1e293b;
+  --font: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
 
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection { background: var(--blue); color: #fff; }
+
+a { color: inherit; text-decoration: none; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* ── NAVIGATION ── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10, 15, 26, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.nav-logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 24px;
+  background: var(--blue);
+  color: #fff !important;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-cta:hover {
+  background: var(--blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ── MOBILE NAV ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 15, 26, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  padding: 40px 24px;
+}
+
+.mobile-menu.open {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeIn 0.2s ease;
+}
+
+.mobile-menu a {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: block;
+  transition: color 0.2s;
+}
+
+.mobile-menu a:hover {
+  color: var(--text);
+}
+
+.mobile-menu .nav-cta {
+  margin-top: 16px;
+  text-align: center;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 160px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37, 99, 235, 0.12) 0%, transparent 70%),
+              radial-gradient(ellipse 60% 40% at 20% 50%, rgba(229, 162, 32, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.btn-primary:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.btn-secondary:hover {
+  color: var(--text);
+  border-color: var(--muted);
+  transform: translateY(-2px);
+}
+
+.hero-tagline {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ── SECTION COMMON ── */
+section {
+  padding: 100px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ── CARDS GRID ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 40px rgba(37, 99, 235, 0.08);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── PAIN POINTS ── */
+.pain-section {
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(17, 24, 39, 0.3) 100%);
+}
+
+.pain-card .card-icon {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.pain-card .card-icon svg {
+  color: #ef4444;
+}
+
+.pain-transition {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 1.15rem;
+  color: var(--gold);
+  font-weight: 500;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── SERVICES ── */
+.service-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card .card-icon {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.service-price {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.service-quote {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border-left: 2px solid var(--blue);
+  padding-left: 16px;
+  margin: 16px 0;
+}
+
+.service-card .card-cta {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.card-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.card-cta a:hover {
+  color: var(--blue-hover);
+  gap: 10px;
+}
+
+/* ── PROCESS ── */
+.process-section {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.3) 0%, var(--bg) 100%);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  position: relative;
+}
+
+.process-card {
+  text-align: center;
+  position: relative;
+}
+
+.process-number {
+  font-family: var(--mono);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--blue);
+  opacity: 0.25;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.process-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.process-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Connector line */
+.process-connector {
+  display: none;
+}
+
+/* ── RESULTS ── */
+.results-section {
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(37, 99, 235, 0.03) 50%, var(--bg) 100%);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  font-family: var(--mono);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.results-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.results-note a {
+  color: var(--blue);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.results-note a:hover {
+  color: var(--blue-hover);
+}
+
+/* ── WHO WE HELP ── */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.help-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.help-card:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+
+.help-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 10px;
+}
+
+.help-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.help-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.help-bottom {
+  text-align: center;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.section-cta {
+  text-align: center;
+}
+
+/* ── FORM SECTION ── */
+.form-section {
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(37, 99, 235, 0.05) 50%, var(--bg) 100%);
+  padding: 100px 0;
+}
+
+.form-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 48px;
+  position: relative;
+}
+
+.form-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, transparent 50%, rgba(229, 162, 32, 0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.form-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.form-header p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.form-group label .required {
+  color: var(--blue);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  outline: none;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #475569;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.form-group select option {
+  background: var(--card);
+  color: var(--text);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  margin-top: 24px;
+}
+
+.form-submit button {
+  width: 100%;
+  padding: 16px 32px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font);
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.form-submit button:hover {
+  background: var(--blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+}
+
+.form-submit button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.form-success svg {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 20px;
+}
+
+.form-success h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.form-success p {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ── ABOUT ── */
+.about-section {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.3) 0%, var(--bg) 100%);
+}
+
+.about-content {
+  max-width: 720px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-card {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  border-color: rgba(229, 162, 32, 0.3);
+  transform: translateY(-2px);
+}
+
+.about-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(229, 162, 32, 0.1);
+  border-radius: 12px;
+  margin: 0 auto 16px;
+}
+
+.about-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-card p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── FINAL CTA ── */
+.final-cta {
+  text-align: center;
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(37, 99, 235, 0.06) 50%, var(--bg) 100%);
+  position: relative;
+}
+
+.final-cta h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.final-cta .sub-text {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: 24px;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 48px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.footer-brand span {
+  color: var(--blue);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
+.footer-bottom {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.footer-email a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.footer-email a:hover {
+  color: var(--blue);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .grid-4, .stats-grid, .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  section { padding: 72px 0; }
+
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 120px 0 80px; }
+
+  .grid-2, .grid-3, .grid-4, .stats-grid, .process-grid, .help-grid, .about-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-wrapper {
+    padding: 32px 24px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero { padding: 110px 0 60px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Measure<span>3</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#audit" class="nav-cta">Free Marketing Audit</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#process" onclick="closeMobileMenu()">How It Works</a>
+  <a href="#about" onclick="closeMobileMenu()">About</a>
+  <a href="#audit" class="nav-cta" onclick="closeMobileMenu()">Free Marketing Audit</a>
+</div>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="animate visible" style="animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;">
+        Stop Losing Leads.<br><span class="highlight">Start Closing Jobs.</span>
+      </h1>
+      <p class="hero-sub animate visible" style="animation: fadeInUp 0.8s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;">
+        We build and manage marketing systems for home service businesses — the same systems we use to run a 7-figure operation. Funnels, automations, follow-up, ads, and everything in between.
+      </p>
+      <div class="hero-buttons animate visible" style="animation: fadeInUp 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;">
+        <a href="#audit" class="btn-primary">Get Your Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a href="#process" class="btn-secondary">See How It Works</a>
+      </div>
+      <p class="hero-tagline animate visible" style="animation: fadeInUp 0.8s 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;">Because sometimes measuring twice ain't enough.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PAIN POINTS ── -->
+<section class="pain-section" id="pain">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>Sound Familiar?</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card pain-card animate delay-1">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Leads come in but nobody follows up fast enough</h3>
+        <p>Speed-to-lead is everything. If you're not responding in minutes, your competitor is.</p>
+      </div>
+      <div class="card pain-card animate delay-2">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>You're spending money on ads but can't tell what's working</h3>
+        <p>No tracking, no attribution, no clarity — just a monthly bill and a hope.</p>
+      </div>
+      <div class="card pain-card animate delay-3">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>Your website looks fine but doesn't generate calls or form fills</h3>
+        <p>A pretty site means nothing if it's not converting visitors into booked jobs.</p>
+      </div>
+      <div class="card pain-card animate delay-4">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>You've tried agencies before and got burned by long contracts and no results</h3>
+        <p>Fancy proposals, zero accountability, and a contract you can't escape.</p>
+      </div>
+    </div>
+    <p class="pain-transition animate delay-5">You don't need another agency. You need someone who actually runs this stuff every day.</p>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>What We Do.</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card service-card animate delay-1">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Google Ads Management</h3>
+        <p>Campaign setup, keyword research, landing pages, bid optimization, conversion tracking, and transparent reporting.</p>
+        <p class="service-quote">"We manage campaigns for a company doing 60+ deals/month. We'll build you the same system."</p>
+        <p class="service-price">Starting at $1,500/mo</p>
+        <div class="card-cta">
+          <a href="#audit">Get started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="card service-card animate delay-2">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <h3>GoHighLevel Setup & Automation</h3>
+        <p>CRM configuration, automated follow-up sequences, calendar booking, pipeline management, and review automation.</p>
+        <p class="service-quote">"Most businesses lose 40% of leads to slow follow-up. We fix that."</p>
+        <p class="service-price">$3,000 – $5,000 one-time</p>
+        <div class="card-cta">
+          <a href="#audit">Get started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="card service-card animate delay-3">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="m7 8 3 3-3 3"/><line x1="13" y1="14" x2="17" y2="14"/></svg>
+        </div>
+        <h3>Landing Pages & Funnels</h3>
+        <p>Conversion-optimized landing pages built for your service area — designed to turn ad clicks into booked appointments.</p>
+        <p class="service-quote">"Stop sending ad traffic to your homepage."</p>
+        <p class="service-price">$1,500 – $3,000 one-time</p>
+        <div class="card-cta">
+          <a href="#audit">Get started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+      <div class="card service-card animate delay-4">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Full Marketing System</h3>
+        <p>Everything managed monthly — ads, funnels, automations, follow-up, reporting, and optimization. The complete package.</p>
+        <p class="service-quote">"You run your business. We run your marketing."</p>
+        <p class="service-price">$2,500 – $4,000/mo</p>
+        <div class="card-cta">
+          <a href="#audit">Get started <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="section-cta animate" style="margin-top: 48px;">
+      <a href="#audit" class="btn-primary">Get Your Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>How It Works.</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-card animate delay-1">
+        <div class="process-number">01</div>
+        <h3>Free Marketing Audit</h3>
+        <p>We research your Google presence, website, ads, and follow-up. Then hop on a 30-min call and show you exactly what's broken.</p>
+      </div>
+      <div class="process-card animate delay-2">
+        <div class="process-number">02</div>
+        <h3>Identify the Gaps</h3>
+        <p>We pinpoint the 3 biggest things costing you leads and revenue — with data, not guesses.</p>
+      </div>
+      <div class="process-card animate delay-3">
+        <div class="process-number">03</div>
+        <h3>Build the Systems</h3>
+        <p>Funnels, automations, ad campaigns, landing pages — all built in GoHighLevel. Setup: 2–3 weeks.</p>
+      </div>
+      <div class="process-card animate delay-4">
+        <div class="process-number">04</div>
+        <h3>Manage & Optimize</h3>
+        <p>We monitor, optimize, and send monthly reports. You see where every dollar goes.</p>
+      </div>
+    </div>
+    <div class="section-cta animate" style="margin-top: 48px;">
+      <a href="#audit" class="btn-primary">Start With a Free Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESULTS ── -->
+<section class="results-section" id="results">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>The Numbers Speak.</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card animate delay-1">
+        <div class="stat-number">100K+</div>
+        <div class="stat-label">Leads generated</div>
+      </div>
+      <div class="stat-card animate delay-2">
+        <div class="stat-number">72%</div>
+        <div class="stat-label">Reduction in cost-per-sale</div>
+      </div>
+      <div class="stat-card animate delay-3">
+        <div class="stat-number">60+</div>
+        <div class="stat-label">Deals/month managed</div>
+      </div>
+      <div class="stat-card animate delay-4">
+        <div class="stat-number">285</div>
+        <div class="stat-label">Zip codes across 3 states</div>
+      </div>
+    </div>
+    <p class="results-note animate">Client testimonials coming soon. <a href="#audit">Book a free audit</a> and we'll show you our work.</p>
+  </div>
+</section>
+
+<!-- ── WHO WE HELP ── -->
+<section id="industries">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>Who We Help</h2>
+    </div>
+    <div class="help-grid">
+      <div class="help-card animate delay-1">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1m-8-9H3m18 0h-1m-2.636-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3>HVAC Companies</h3>
+      </div>
+      <div class="help-card animate delay-2">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20l4-16m2 16l4-16M3 8h18M3 16h18"/></svg>
+        </div>
+        <h3>Landscaping & Lawn Care</h3>
+      </div>
+      <div class="help-card animate delay-3">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Roofing Contractors</h3>
+      </div>
+      <div class="help-card animate delay-1">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Cleaning Services</h3>
+      </div>
+      <div class="help-card animate delay-2">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 8h12"/><path d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-2.64 0A2.5 2.5 0 0 1 9.3 17.7"/><path d="M6.7 17.7a2.5 2.5 0 0 0 3.16 3.83"/><circle cx="12" cy="14" r="4"/></svg>
+        </div>
+        <h3>Plumbers & Electricians</h3>
+      </div>
+      <div class="help-card animate delay-3">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M9 14h.01"/><path d="M12 14h.01"/><path d="M15 14h.01"/><path d="M9 17h.01"/><path d="M12 17h.01"/></svg>
+        </div>
+        <h3>Dental Practices & Med Spas</h3>
+      </div>
+    </div>
+    <p class="help-bottom animate">If you're a local service business that wants more leads and better follow-up, we can help.</p>
+    <div class="section-cta animate">
+      <a href="#audit" class="btn-primary">Get Your Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── LEAD CAPTURE FORM ── -->
+<section class="form-section" id="audit">
+  <div class="container">
+    <div class="form-wrapper animate">
+      <div class="form-header">
+        <h2>Get Your Free Marketing Audit</h2>
+        <p>We'll research your business, review your online presence, and show you exactly where you're losing leads — in 30 minutes, no strings attached.</p>
+      </div>
+      <form id="auditForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Business Name <span class="required">*</span></label>
+            <input type="text" name="business_name" required placeholder="Your Business Name">
+          </div>
+          <div class="form-group">
+            <label>Your Name <span class="required">*</span></label>
+            <input type="text" name="name" required placeholder="First & Last Name">
+          </div>
+          <div class="form-group">
+            <label>Email <span class="required">*</span></label>
+            <input type="email" name="email" required placeholder="you@company.com">
+          </div>
+          <div class="form-group">
+            <label>Phone <span class="required">*</span></label>
+            <input type="tel" name="phone" required placeholder="(555) 555-5555">
+          </div>
+          <div class="form-group">
+            <label>Business Type</label>
+            <select name="business_type">
+              <option value="" disabled selected>Select your industry</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Landscaping">Landscaping</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Cleaning">Cleaning</option>
+              <option value="Plumbing/Electrical">Plumbing / Electrical</option>
+              <option value="Dental/Medical">Dental / Medical</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Website URL</label>
+            <input type="url" name="website" placeholder="https://yourbusiness.com">
+          </div>
+          <div class="form-group full-width">
+            <label>What's your biggest marketing challenge right now?</label>
+            <textarea name="challenge" placeholder="Tell us what's not working..."></textarea>
+          </div>
+        </div>
+        <div class="form-submit">
+          <button type="submit" id="submitBtn">Request My Free Audit</button>
+        </div>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Got it!</h3>
+        <p>We'll review your business and reach out within 24 hours to schedule your audit call.</p>
+      </div>
+      <p class="form-note">No contracts. No pressure. Just a straight-up look at your marketing.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="section-header animate">
+      <h2>Why Measure3?</h2>
+    </div>
+    <div class="about-content animate">
+      <p>Measure3 was founded by a marketing operator — not an agency salesperson. Our founder runs marketing for a 7-figure home services company every day, managing ad spend across multiple channels, a 13-person sales team, and the full lead-to-close pipeline in GoHighLevel. We don't sell theory. We sell the same systems we use to generate real revenue.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card animate delay-1">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#e5a220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p>We use what we sell.</p>
+      </div>
+      <div class="about-card animate delay-2">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#e5a220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <p>We specialize in GoHighLevel.</p>
+      </div>
+      <div class="about-card animate delay-3">
+        <div class="about-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#e5a220" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <p>We're fast. Audit in 3 days. Full setup in 2–3 weeks.</p>
+      </div>
+    </div>
+    <div class="section-cta animate" style="margin-top: 48px;">
+      <a href="#audit" class="btn-primary">Get Your Free Marketing Audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="animate">Ready to stop guessing<br>and start growing?</h2>
+    <div class="animate delay-1">
+      <a href="#audit" class="btn-primary" style="font-size: 1.15rem; padding: 18px 40px;">Get Your Free Marketing Audit <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <p class="sub-text animate delay-2">30 minutes. No contracts. No BS.</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Measure<span>3</span></div>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#audit">Free Audit</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Measure3 Consulting, LLC — Huntsville, Alabama</p>
+      <div class="footer-email"><a href="mailto:measure3consulting@gmail.com">measure3consulting@gmail.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── JAVASCRIPT ── -->
+<script>
+// Intersection Observer for scroll animations
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.animate').forEach(function(el) {
+    // Don't re-observe hero elements that are already visible
+    if (!el.classList.contains('visible')) {
+      observer.observe(el);
+    }
+  });
+})();
+
+// Mobile menu toggle
+var hamburger = document.querySelector('.hamburger');
+var mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', function() {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeMobileMenu() {
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+
+// Form submission
+// <!-- REPLACE WITH YOUR GHL WEBHOOK URL -->
+var WEBHOOK_URL = 'https://your-ghl-webhook-url.com/webhook';
+var FALLBACK_EMAIL = 'measure3consulting@gmail.com';
+
+document.getElementById('auditForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var form = e.target;
+  var btn = document.getElementById('submitBtn');
+  var formData = {};
+
+  new FormData(form).forEach(function(value, key) {
+    formData[key] = value;
+  });
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(function(response) {
+    if (!response.ok) throw new Error('Network response was not ok');
+    showSuccess();
+  })
+  .catch(function() {
+    // Fallback: open mailto with form data
+    var subject = encodeURIComponent('Free Marketing Audit Request - ' + (formData.business_name || ''));
+    var body = encodeURIComponent(
+      'Business Name: ' + (formData.business_name || '') + '\n' +
+      'Name: ' + (formData.name || '') + '\n' +
+      'Email: ' + (formData.email || '') + '\n' +
+      'Phone: ' + (formData.phone || '') + '\n' +
+      'Business Type: ' + (formData.business_type || '') + '\n' +
+      'Website: ' + (formData.website || '') + '\n' +
+      'Challenge: ' + (formData.challenge || '')
+    );
+    window.location.href = 'mailto:' + FALLBACK_EMAIL + '?subject=' + subject + '&body=' + body;
+    showSuccess();
+  });
+
+  function showSuccess() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Request My Free Audit';
+  }
+});
+
+// Smooth scroll for all anchor links (fallback for older browsers)
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    var target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
