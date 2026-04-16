@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23B8860B' font-family='system-ui' font-size='13' font-weight='500'>M3</text></svg>",
+    icon: "/logo.png",
   },
 };
 

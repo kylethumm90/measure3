@@ -8,7 +8,7 @@ interface ServiceCardProps {
 export function ServiceCard({ number, title, description, detail }: ServiceCardProps) {
   return (
     <div className="border-subtle flex flex-col gap-4 rounded-xl bg-white p-6 transition-colors hover:bg-[#fafaf9]">
-      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#F9F5EC] text-xs font-medium text-[#B8860B]">
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#B8860B]/10 text-xs font-medium text-[#B8860B]">
         {number}
       </span>
       <h3 className="text-base font-medium text-[#1a1a1a]">{title}</h3>

@@ -77,7 +77,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 text-center">
-          <p className="mb-5 inline-block rounded-full bg-[#F9F5EC] px-3 py-1 text-xs font-medium text-[#B8860B]">
+          <p className="mb-5 inline-block rounded-full border border-[#B8860B]/20 bg-[#B8860B]/5 px-3 py-1 text-xs font-medium text-[#B8860B]">
             AI-powered marketing for home services
           </p>
           <h1 className="text-3xl font-medium text-[#1a1a1a] sm:text-4xl lg:text-[44px]" style={{ lineHeight: 1.15 }}>
@@ -90,19 +90,19 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-lg bg-[#B8860B] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#A07608]"
+              className="rounded-lg bg-[#1a1a1a] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#333]"
             >
               Get a free marketing audit
             </Link>
             <Link
               href="/#how-it-works"
-              className="rounded-lg bg-[#f5f5f4] px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#ebebea]"
+              className="border-subtle rounded-lg bg-white px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#fafafa]"
             >
               See how it works
             </Link>
           </div>
 
-          <div className="border-subtle mx-auto mt-12 flex max-w-lg items-center justify-center gap-8 border-x-0 border-b-0 pt-8 sm:gap-12">
+          <div className="mx-auto mt-12 flex max-w-lg items-center justify-center gap-8 border-t border-[rgba(0,0,0,0.08)] pt-8 sm:gap-12">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
                 <span className="text-lg font-medium text-[#1a1a1a]">{stat.value}</span>
@@ -114,7 +114,7 @@ export default function HomePage() {
       </section>
 
       {/* Client bar */}
-      <section className="bg-[#f5f5f4] py-10">
+      <section className="border-subtle border-x-0 bg-[#fafafa] py-10">
         <div className="mx-auto max-w-6xl px-5">
           <p className="mb-6 text-center text-xs font-medium tracking-wide text-[#6b7280]">
             Operators we&apos;ve helped grow
@@ -122,7 +122,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {/* PLACEHOLDER — replace with actual client logos */}
             {CLIENTS.map((name) => (
-              <span key={name} className="text-sm font-medium text-[#9ca3af]">
+              <span key={name} className="text-sm font-medium text-[#c0c0c0]">
                 {name}
               </span>
             ))}
@@ -150,7 +150,7 @@ export default function HomePage() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="bg-[#f5f5f4] py-16 sm:py-20">
+      <section id="how-it-works" className="bg-[#fafafa] py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-[28px]">

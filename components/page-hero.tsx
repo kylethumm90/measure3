@@ -9,7 +9,7 @@ export function PageHero({ badge, heading, description }: PageHeroProps) {
     <section className="bg-white py-16 sm:py-20">
       <div className="mx-auto max-w-3xl px-5 text-center">
         {badge && (
-          <p className="mb-4 inline-block rounded-full bg-[#F9F5EC] px-3 py-1 text-xs font-medium text-[#B8860B]">
+          <p className="mb-4 inline-block rounded-full border border-[#B8860B]/20 bg-[#B8860B]/5 px-3 py-1 text-xs font-medium text-[#B8860B]">
             {badge}
           </p>
         )}

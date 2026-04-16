@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -33,13 +34,17 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-subtle">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Measure3 home">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-[#1a1a1a]">
-            <span className="text-[11px] font-medium text-[#B8860B] leading-none">M3</span>
-          </div>
-          <span className="hidden text-sm font-medium text-[#1a1a1a] sm:inline">Measure3</span>
+    <header className="sticky top-0 z-50 border-subtle bg-white">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+        <Link href="/" aria-label="Measure3 home">
+          <Image
+            src="/logo.png"
+            alt="Measure3"
+            width={140}
+            height={40}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -57,7 +62,7 @@ export function Nav() {
         <div className="flex items-center gap-4">
           <Link
             href="/contact"
-            className="hidden rounded-lg bg-[#B8860B] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#A07608] sm:inline-block"
+            className="hidden rounded-lg bg-[#1a1a1a] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#333] sm:inline-block"
           >
             Book a call
           </Link>
@@ -87,7 +92,7 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-[#B8860B] px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-[#A07608]"
+              className="mt-2 rounded-lg bg-[#1a1a1a] px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-[#333]"
             >
               Book a call
             </Link>
