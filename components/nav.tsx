@@ -40,9 +40,9 @@ export function Nav() {
           <Image
             src="/logo.png"
             alt="Measure3"
-            width={140}
-            height={40}
-            className="h-9 w-auto"
+            width={280}
+            height={80}
+            className="h-[72px] w-auto"
             priority
           />
         </Link>
