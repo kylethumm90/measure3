@@ -4,7 +4,7 @@ import { MetricCard } from "@/components/metric-card";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { CTASection } from "@/components/cta-section";
 
-const services = [
+const SERVICES = [
   {
     number: "01",
     title: "Paid media audit",
@@ -26,9 +26,9 @@ const services = [
       "A senior marketing operator embedded in your business. Strategy, vendor management, reporting, and accountability without the six-figure salary.",
     detail: "Monthly retainer",
   },
-];
+] as const;
 
-const steps = [
+const STEPS = [
   {
     week: "Week 1",
     title: "Discovery",
@@ -42,28 +42,34 @@ const steps = [
   {
     week: "Week 3",
     title: "Build",
-    description: "We rebuild what's broken — new campaigns, automations, tracking, and reporting dashboards.",
+    description: "We rebuild what's broken. New campaigns, automations, tracking, and reporting dashboards.",
   },
   {
     week: "Week 4+",
     title: "Scale",
     description: "Ongoing optimization. We test, measure, and scale what's working while cutting what's not.",
   },
-];
+] as const;
 
-const metrics = [
+const METRICS = [
   { value: "\u221242%", label: "Average reduction in cost per booked job" },
   { value: "<60s", label: "Speed-to-lead response time" },
   { value: "$12M+", label: "Revenue attributed to our systems" },
-];
+] as const;
 
-const clients = [
+const CLIENTS = [
   "Apex HVAC",
   "Summit Roofing",
   "ClearFlow Plumbing",
   "SunPeak Solar",
   "ProComfort Heating",
-];
+] as const;
+
+const STATS = [
+  { value: "40+", label: "Brands served" },
+  { value: "$12M+", label: "Revenue driven" },
+  { value: "3.2x", label: "Avg. ROAS" },
+] as const;
 
 export default function HomePage() {
   return (
@@ -71,15 +77,11 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-5 text-center">
-          <span className="mb-5 inline-block rounded-full bg-[#f5f5f4] px-3 py-1 text-xs font-medium text-[#6b7280]">
+          <p className="mb-5 inline-block rounded-full bg-[#F9F5EC] px-3 py-1 text-xs font-medium text-[#B8860B]">
             AI-powered marketing for home services
-          </span>
-          <h1
-            className="text-3xl font-medium text-[#1a1a1a] sm:text-4xl lg:text-5xl"
-            style={{ lineHeight: 1.15 }}
-          >
-            More jobs booked.{" "}
-            <span className="block sm:inline">Less money wasted on ads.</span>
+          </p>
+          <h1 className="text-3xl font-medium text-[#1a1a1a] sm:text-4xl lg:text-[44px]" style={{ lineHeight: 1.15 }}>
+            More jobs booked. Less money wasted on ads.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-[#6b7280]">
             We help HVAC, roofing, plumbing, and solar companies grow with
@@ -88,48 +90,38 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-lg bg-[#2563eb] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#1d4ed8]"
+              className="rounded-lg bg-[#B8860B] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#A07608]"
             >
               Get a free marketing audit
             </Link>
             <Link
               href="/#how-it-works"
-              className="rounded-lg bg-[#f5f5f4] px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#e5e5e4]"
+              className="rounded-lg bg-[#f5f5f4] px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#ebebea]"
             >
               See how it works
             </Link>
           </div>
 
-          {/* Proof stats */}
-          <div
-            className="mx-auto mt-12 flex max-w-lg items-center justify-center gap-8 sm:gap-12"
-            style={{ borderTop: "0.5px solid rgba(0,0,0,0.1)" }}
-          >
-            <div className="pt-8 text-center">
-              <span className="text-lg font-medium text-[#1a1a1a]">40+</span>
-              <p className="text-xs text-[#6b7280]">Brands served</p>
-            </div>
-            <div className="pt-8 text-center">
-              <span className="text-lg font-medium text-[#1a1a1a]">$12M+</span>
-              <p className="text-xs text-[#6b7280]">Revenue driven</p>
-            </div>
-            <div className="pt-8 text-center">
-              <span className="text-lg font-medium text-[#1a1a1a]">3.2x</span>
-              <p className="text-xs text-[#6b7280]">Avg. ROAS</p>
-            </div>
+          <div className="border-subtle mx-auto mt-12 flex max-w-lg items-center justify-center gap-8 border-x-0 border-b-0 pt-8 sm:gap-12">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <span className="text-lg font-medium text-[#1a1a1a]">{stat.value}</span>
+                <p className="text-xs text-[#6b7280]">{stat.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Client logo bar */}
+      {/* Client bar */}
       <section className="bg-[#f5f5f4] py-10">
         <div className="mx-auto max-w-6xl px-5">
-          <p className="mb-6 text-center text-xs font-medium text-[#6b7280] tracking-wide">
+          <p className="mb-6 text-center text-xs font-medium tracking-wide text-[#6b7280]">
             Operators we&apos;ve helped grow
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-            {clients.map((name) => (
-              /* PLACEHOLDER — replace with actual logos */
+            {/* PLACEHOLDER — replace with actual client logos */}
+            {CLIENTS.map((name) => (
               <span key={name} className="text-sm font-medium text-[#9ca3af]">
                 {name}
               </span>
@@ -142,7 +134,7 @@ export default function HomePage() {
       <section id="services" className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-3xl">
+            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-[28px]">
               Three ways we help you grow
             </h2>
             <p className="mt-3 text-sm text-[#6b7280]">
@@ -150,8 +142,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => (
-              <ServiceCard key={service.number} {...service} />
+            {SERVICES.map((s) => (
+              <ServiceCard key={s.number} {...s} />
             ))}
           </div>
         </div>
@@ -161,7 +153,7 @@ export default function HomePage() {
       <section id="how-it-works" className="bg-[#f5f5f4] py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-3xl">
+            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-[28px]">
               How it works
             </h2>
             <p className="mt-3 text-sm text-[#6b7280]">
@@ -169,21 +161,11 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step) => (
-              <div
-                key={step.week}
-                className="flex flex-col gap-3 rounded-xl bg-white p-6"
-                style={{ border: "0.5px solid rgba(0,0,0,0.1)" }}
-              >
-                <span className="text-xs font-medium text-[#2563eb]">
-                  {step.week}
-                </span>
-                <h3 className="text-base font-medium text-[#1a1a1a]">
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-[#6b7280]">
-                  {step.description}
-                </p>
+            {STEPS.map((step) => (
+              <div key={step.week} className="border-subtle flex flex-col gap-3 rounded-xl bg-white p-6">
+                <span className="text-xs font-medium text-[#B8860B]">{step.week}</span>
+                <h3 className="text-base font-medium text-[#1a1a1a]">{step.title}</h3>
+                <p className="text-sm leading-relaxed text-[#6b7280]">{step.description}</p>
               </div>
             ))}
           </div>
@@ -194,7 +176,7 @@ export default function HomePage() {
       <section id="results" className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-3xl">
+            <h2 className="text-2xl font-medium text-[#1a1a1a] sm:text-[28px]">
               Results that matter
             </h2>
             <p className="mt-3 text-sm text-[#6b7280]">
@@ -202,8 +184,8 @@ export default function HomePage() {
             </p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {metrics.map((metric) => (
-              <MetricCard key={metric.value} {...metric} />
+            {METRICS.map((m) => (
+              <MetricCard key={m.value} {...m} />
             ))}
           </div>
           <div className="mt-5">

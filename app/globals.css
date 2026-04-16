@@ -3,12 +3,13 @@
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-serif: "Georgia", "Times New Roman", serif;
-  --color-primary: #2563eb;
+  --color-gold: #B8860B;
+  --color-gold-hover: #A07608;
+  --color-gold-light: #F9F5EC;
   --color-text: #1a1a1a;
   --color-text-muted: #6b7280;
   --color-bg: #ffffff;
   --color-bg-secondary: #f5f5f4;
-  --color-border: rgba(0, 0, 0, 0.1);
   --color-dark: #111111;
 }
 
@@ -29,4 +30,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   line-height: 1.25;
+}
+
+/* Shared border utility — avoids inline style={{ border }} everywhere */
+.border-subtle {
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
 }

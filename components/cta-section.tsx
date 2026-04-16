@@ -21,7 +21,7 @@ export function CTASection({ heading, description, buttonText, buttonHref }: CTA
         )}
         <Link
           href={buttonHref}
-          className="mt-8 inline-block rounded-lg bg-white px-6 py-3 text-sm font-medium text-[#1a1a1a] transition-colors hover:bg-[#f5f5f4]"
+          className="mt-8 inline-block rounded-lg bg-[#B8860B] px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-[#A07608]"
         >
           {buttonText}
         </Link>
