@@ -38,11 +38,11 @@ export function Nav() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
         <Link href="/" aria-label="Measure3 home">
           <Image
-            src="/logo.png"
+            src="/logo-horizontal.png"
             alt="Measure3"
             width={280}
-            height={80}
-            className="h-[72px] w-auto"
+            height={56}
+            className="h-10 w-auto"
             priority
           />
         </Link>
