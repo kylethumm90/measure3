@@ -54,7 +54,7 @@ const STEPS = [
 const METRICS = [
   { value: "\u221242%", label: "Average reduction in cost per booked job" },
   { value: "<60s", label: "Speed-to-lead response time" },
-  { value: "$12M+", label: "Revenue attributed to our systems" },
+  { value: "$50M+", label: "Revenue attributed to our systems" },
 ] as const;
 
 const CLIENTS = [
@@ -66,9 +66,9 @@ const CLIENTS = [
 ] as const;
 
 const STATS = [
-  { value: "40+", label: "Brands served" },
-  { value: "$12M+", label: "Revenue driven" },
-  { value: "3.2x", label: "Avg. ROAS" },
+  { value: "300+", label: "Companies served" },
+  { value: "$50M+", label: "Revenue driven" },
+  { value: "5x+", label: "Avg. ROAS" },
 ] as const;
 
 export default function HomePage() {
