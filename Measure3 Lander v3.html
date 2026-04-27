@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Measure3 — $50M+ driven. 350+ deals/month. Sustained.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700,900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --midnight: #0B0F14;
+    --paper: #F2EEE6;        /* warm field-manual paper */
+    --ink: #0E1116;
+    --ink-2: #1F242C;
+    --gold: #C8961F;          /* less polished than D4AF37 */
+    --gold-deep: #8E6911;
+    --rust: #B7411F;
+    --steel: #6E7480;
+    --light: #D5D0C4;
+    --rule: rgba(14,17,22,0.16);
+    --rule-strong: rgba(14,17,22,0.55);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    /* paper grain */
+    background-image:
+      radial-gradient(rgba(14,17,22,0.05) 1px, transparent 1px),
+      radial-gradient(rgba(14,17,22,0.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+  }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: "ss01","zero"; }
+  .satoshi { font-family: 'Satoshi','Inter',sans-serif; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  .wrap { max-width: 1360px; margin: 0 auto; padding: 0 28px; }
+
+  /* ============ TOPBAR (industrial, no blur) ============ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--paper);
+    border-bottom: 2px solid var(--ink);
+  }
+  .topbar-inner {
+    display: grid; grid-template-columns: auto 1fr auto;
+    align-items: center; gap: 28px;
+    height: 64px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark { width: 28px; height: 28px; border: 1.5px solid var(--ink); display:grid; place-items:center; }
+  .brand-word { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; }
+  .brand-word sup { color: var(--gold); }
+  .nav-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-2); letter-spacing: 0.06em;
+    border-left: 1px solid var(--rule-strong); padding-left: 16px;
+    display: flex; gap: 18px; flex-wrap: wrap;
+  }
+  .nav-meta b { color: var(--ink); font-weight: 700; }
+  .nav { display: flex; gap: 22px; align-items: center; }
+  .nav a {
+    font-family: 'JetBrains Mono', monospace; font-size: 11.5px;
+    color: var(--ink-2); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+  }
+  .nav a:hover { color: var(--ink); }
+  .btn {
+    border: 2px solid var(--ink); padding: 10px 16px;
+    background: var(--ink); color: var(--paper);
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase;
+    transition: background .15s, color .15s, transform .1s;
+    display: inline-flex; gap: 10px; align-items: center;
+  }
+  .btn:hover { background: var(--gold); color: var(--ink); border-color: var(--ink); }
+  .btn:active { transform: translateY(1px); }
+  .btn.gold { background: var(--gold); color: var(--ink); border-color: var(--ink); }
+  .btn.gold:hover { background: var(--ink); color: var(--paper); }
+  .btn.ghost { background: transparent; color: var(--ink); }
+
+  .text-link {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+    color: var(--ink); border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 2px;
+  }
+  .text-link:hover { color: var(--gold-deep); border-color: var(--gold-deep); }
+
+  /* ============ HERO (proof leads) ============ */
+  .hero {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(14,17,22,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(14,17,22,0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    pointer-events: none;
+  }
+  .hero-stamp {
+    position: absolute;
+    top: 24px; right: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; color: var(--rust);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    border: 1.5px solid var(--rust); padding: 4px 10px;
+    transform: rotate(2deg);
+    opacity: 0.85;
+  }
+  .hero-inner {
+    position: relative;
+    padding: 56px 28px 48px;
+  }
+  .hero-meta-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-2); letter-spacing: 0.1em; text-transform: uppercase;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 12px; margin-bottom: 36px;
+  }
+  .hero-meta-row b { color: var(--ink); font-weight: 700; }
+
+  .proof {
+    display: grid; grid-template-columns: 1fr 1px 1fr;
+    gap: 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .proof-cell { padding: 36px 28px; background: var(--ink); }
+  .proof .divider { background: var(--gold); width: 2px; }
+  .proof .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase;
+    margin-bottom: 12px; display: flex; justify-content: space-between;
+  }
+  .proof .label .meta { color: rgba(242,238,230,0.5); }
+  .proof .num {
+    font-family: 'Satoshi', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: clamp(72px, 11vw, 168px);
+    line-height: 0.88; letter-spacing: -0.045em;
+  }
+  .proof .num .u { font-size: 0.45em; vertical-align: 0.45em; color: var(--gold); margin-left: 0.04em; letter-spacing: -0.02em; }
+  .proof .sub {
+    margin-top: 14px;
+    font-family: 'Inter', sans-serif; font-size: 14px; color: rgba(242,238,230,0.78);
+    max-width: 36ch; line-height: 1.45;
+  }
+
+  .hero-bottom {
+    padding-top: 36px;
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; align-items: end;
+  }
+  .hero-headline {
+    font-family: 'Satoshi','Inter',sans-serif;
+    margin: 0;
+    font-weight: 900;
+    font-size: clamp(40px, 4.6vw, 68px);
+    line-height: 0.98; letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+  .hero-headline .gold { color: var(--gold-deep); }
+  .hero-deck {
+    margin: 18px 0 0;
+    font-size: 17px; line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 44ch;
+  }
+  .hero-actions { display: flex; gap: 22px; align-items: center; margin-top: 24px; flex-wrap: wrap; }
+
+  .hero-extra {
+    border-left: 2px solid var(--ink);
+    padding-left: 28px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .hero-extra .stat {
+    display: grid; grid-template-columns: 1fr; gap: 4px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-extra .stat:last-child { border-bottom: none; padding-bottom: 0; }
+  .hero-extra .lab {
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+    color: var(--ink-2); letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600;
+  }
+  .hero-extra .val {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900; font-size: 32px; letter-spacing: -0.025em; line-height: 1;
+  }
+  .hero-extra .val .acc { color: var(--gold-deep); }
+  .hero-extra .det {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel);
+  }
+
+  /* ============ VERTICALS (focused, not 11) ============ */
+  .strip {
+    border-bottom: 2px solid var(--ink);
+    padding: 18px 28px;
+    display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    background: var(--ink); color: var(--paper);
+  }
+  .strip-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+  }
+  .strip-track { display: flex; gap: 28px; flex-wrap: wrap; }
+  .strip-track span {
+    font-family: 'JetBrains Mono', monospace; font-weight: 600;
+    color: var(--paper); font-size: 13px; letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative; padding-left: 14px;
+  }
+  .strip-track span::before {
+    content: ""; position: absolute; left: 0; top: 50%;
+    width: 6px; height: 6px; background: var(--gold); transform: translateY(-50%);
+  }
+  .strip-track .deep { color: var(--gold); }
+
+  /* ============ SECTION HEADS ============ */
+  .sec-head {
+    display: grid; grid-template-columns: 120px 1fr auto;
+    gap: 24px; align-items: end;
+    padding: 32px 28px 22px;
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+    position: relative;
+  }
+  .sec-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--rust);
+    font-weight: 700; letter-spacing: 0.16em;
+  }
+  .sec-title {
+    font-family: 'Satoshi', sans-serif;
+    font-weight: 900; font-size: clamp(26px, 3vw, 38px);
+    letter-spacing: -0.025em;
+  }
+  .sec-meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel);
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ============ FOR / NOT FOR ============ */
+  .duo { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 2px solid var(--ink); }
+  .duo > div { padding: 36px 28px; }
+  .duo > div + div { border-left: 2px solid var(--ink); background: rgba(14,17,22,0.04); }
+  .duo h3 {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    margin: 0 0 22px;
+    display: flex; align-items: center; gap: 10px;
+    color: var(--ink-2);
+  }
+  .duo h3 .tag { color: var(--gold-deep); }
+  .duo h3 .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px;
+    background: var(--ink); color: var(--gold); font-weight: 700;
+  }
+  .duo h3.no .badge { background: var(--rust); color: var(--paper); }
+  .duo h3.no .tag { color: var(--rust); }
+  .duo ul { list-style: none; padding: 0; margin: 0; }
+  .duo li {
+    display: grid; grid-template-columns: 22px 1fr; gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px; line-height: 1.5;
+  }
+  .duo li:last-child { border-bottom: none; }
+  .duo .y { color: var(--gold-deep); font-weight: 800; font-size: 18px; line-height: 1.4; }
+  .duo .n {
+    color: var(--rust); font-weight: 700; font-size: 18px; line-height: 1.4;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .duo .for li { color: var(--ink); }
+  .duo .not li { color: var(--ink-2); }
+
+  /* ============ SERVICES (3 buckets) ============ */
+  .services { border-bottom: 2px solid var(--ink); }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .svc {
+    padding: 36px 28px;
+    border-right: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 280px;
+    transition: background .15s;
+    background: var(--paper);
+  }
+  .svc:last-child { border-right: none; }
+  .svc:hover { background: rgba(200,150,31,0.07); }
+  .svc .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--rust); font-weight: 700; letter-spacing: 0.14em;
+  }
+  .svc h4 {
+    font-family: 'Satoshi', sans-serif;
+    margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -0.02em;
+  }
+  .svc .what {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--ink-2); letter-spacing: 0.08em; text-transform: uppercase;
+    font-weight: 600;
+  }
+  .svc p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+  .svc .legs {
+    margin-top: auto; padding-top: 16px; border-top: 1px dashed var(--rule-strong);
+    display: flex; flex-direction: column; gap: 6px;
+  }
+  .svc .legs div {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--ink); display: grid; grid-template-columns: 16px 1fr; gap: 8px;
+  }
+  .svc .legs div::before {
+    content: "//"; color: var(--gold-deep); font-weight: 700;
+  }
+
+  /* ============ AI (3 cards, sharper) ============ */
+  .ai { border-bottom: 2px solid var(--ink); background: var(--paper); }
+  .ai-intro {
+    display: grid; grid-template-columns: 1.5fr 1fr;
+    border-bottom: 2px solid var(--ink);
+  }
+  .ai-intro-l { padding: 40px 28px; border-right: 2px solid var(--ink); }
+  .ai-h {
+    font-family: 'Satoshi', sans-serif;
+    margin: 0; font-weight: 900;
+    font-size: clamp(28px, 3.2vw, 44px);
+    line-height: 1.05; letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+  .ai-h .gold { color: var(--gold-deep); }
+  .ai-intro-l p { margin: 18px 0 0; font-size: 16.5px; color: var(--ink-2); line-height: 1.55; max-width: 56ch; }
+
+  .ai-intro-r {
+    background: var(--ink); color: var(--paper);
+    display: grid; grid-template-rows: 1fr 1fr;
+  }
+  .ai-stat { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+  .ai-stat + .ai-stat { border-top: 1px solid rgba(242,238,230,0.18); }
+  .ai-stat .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold);
+    font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .ai-stat .big {
+    font-family: 'Satoshi', sans-serif; font-weight: 900;
+    font-size: clamp(48px, 5.4vw, 80px); line-height: 0.95; letter-spacing: -0.04em;
+  }
+  .ai-stat .big .u { font-size: 0.5em; vertical-align: 0.3em; color: var(--gold); margin-left: 0.04em; }
+  .ai-stat .sub { margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: rgba(242,238,230,0.7); }
+
+  .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 2px solid var(--ink); }
+  .ai-card {
+    padding: 32px 28px;
+    border-right: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 320px;
+    transition: background .15s;
+  }
+  .ai-card:last-child { border-right: none; }
+  .ai-card:hover { background: rgba(200,150,31,0.07); }
+  .ai-card.featured-ai { background: var(--gold); }
+  .ai-card.featured-ai:hover { background: var(--gold); }
+  .ai-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.14em; }
+  .ai-card h4 { font-family: 'Satoshi', sans-serif; margin: 0; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+  .ai-card p { margin: 0; color: var(--ink-2); font-size: 14.5px; line-height: 1.55; }
+  .ai-list { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+  .ai-list li {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink-2);
+    padding-left: 16px; position: relative;
+  }
+  .ai-list li::before { content: ""; position: absolute; left: 0; top: 7px; width: 6px; height: 6px; background: var(--gold-deep); }
+  .ai-foot {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--rule-strong);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2);
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .ai-foot b { color: var(--rust); font-weight: 800; }
+
+  /* ============ METHOD ============ */
+  .method { border-bottom: 2px solid var(--ink); background: var(--ink); color: var(--paper); }
+  .method .sec-head { background: var(--ink); color: var(--paper); border-bottom-color: var(--gold); }
+  .method .sec-num { color: var(--gold); }
+  .method .sec-meta { color: rgba(242,238,230,0.6); }
+  .method-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .step {
+    padding: 32px 28px;
+    border-right: 1px solid rgba(242,238,230,0.18);
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .step:last-child { border-right: none; }
+  .step .step-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--gold); font-weight: 700; letter-spacing: 0.14em;
+  }
+  .step h4 { font-family: 'Satoshi', sans-serif; margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -0.02em; }
+  .step .body { color: rgba(242,238,230,0.78); font-size: 14.5px; line-height: 1.55; }
+  .step .out {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed rgba(242,238,230,0.25);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: rgba(242,238,230,0.6);
+  }
+  .step .out b { color: var(--gold); font-weight: 700; }
+
+  /* ============ FUNNEL (the moneyshot) ============ */
+  .funnel { border-bottom: 2px solid var(--ink); background: var(--paper); }
+  .funnel-head {
+    padding: 24px 28px;
+    border-bottom: 2px solid var(--ink);
+    display: grid; grid-template-columns: 1fr auto;
+    align-items: end; gap: 24px;
+  }
+  .funnel-head h3 {
+    font-family: 'Satoshi', sans-serif; margin: 0;
+    font-size: clamp(24px, 2.6vw, 34px); font-weight: 900; letter-spacing: -0.02em;
+  }
+  .funnel-head .meta {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel);
+    letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600;
+  }
+  .funnel-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    background: var(--ink); color: var(--paper);
+  }
+  .funnel-step {
+    padding: 36px 28px;
+    border-right: 2px solid var(--gold);
+    position: relative;
+  }
+  .funnel-step:last-child { border-right: none; }
+  .funnel-step::after {
+    /* arrow tip */
+    content: ""; position: absolute; right: -10px; top: 50%;
+    width: 18px; height: 18px;
+    background: var(--gold);
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 2; border-right: 2px solid var(--gold);
+  }
+  .funnel-step:last-child::after { display: none; }
+  .funnel-step .stage {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--gold); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .funnel-step .v {
+    font-family: 'Satoshi', sans-serif; font-weight: 900;
+    font-size: clamp(44px, 5.5vw, 76px); line-height: 0.92; letter-spacing: -0.04em;
+  }
+  .funnel-step .lift {
+    margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: rgba(242,238,230,0.78); letter-spacing: 0.04em;
+  }
+  .funnel-step .lift b { color: var(--gold); font-weight: 700; }
+
+  /* ============ FOUNDER ============ */
+  .founder { border-bottom: 2px solid var(--ink); }
+  .founder-grid { display: grid; grid-template-columns: 1.1fr 1fr; }
+  .founder-left { padding: 56px 32px 56px 28px; border-right: 2px solid var(--ink); }
+  .pull {
+    font-family: 'Satoshi', sans-serif;
+    margin: 0;
+    font-size: clamp(28px, 3.2vw, 46px);
+    font-weight: 900; line-height: 1.1; letter-spacing: -0.025em;
+    text-wrap: pretty;
+  }
+  .pull .gold { color: var(--gold-deep); }
+  .pull .q { color: var(--steel); }
+  .by {
+    margin-top: 36px; display: flex; gap: 14px; align-items: center;
+    font-size: 14px; color: var(--ink-2);
+  }
+  .by .av {
+    width: 44px; height: 44px;
+    background: var(--ink); color: var(--gold);
+    display: grid; place-items: center;
+    font-family: 'Satoshi', sans-serif; font-weight: 900; font-size: 15px;
+  }
+  .by b { color: var(--ink); font-weight: 700; }
+
+  .founder-right { padding: 56px 28px; background: rgba(14,17,22,0.04); }
+  .resume { padding: 22px 0; border-top: 1px solid var(--rule-strong); }
+  .resume:first-child { border-top: none; padding-top: 0; }
+  .resume .role { font-family: 'Satoshi', sans-serif; font-size: 19px; font-weight: 900; letter-spacing: -0.01em; }
+  .resume .org { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+  .resume .yrs { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--steel); margin-top: 4px; }
+  .resume .desc { margin-top: 10px; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; }
+  .resume .kpis { margin-top: 14px; display: flex; gap: 22px; flex-wrap: wrap; }
+  .resume .kpis div { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink); font-weight: 600; }
+  .resume .kpis b { color: var(--gold-deep); font-weight: 800; }
+
+  /* ============ ENGAGE ============ */
+  .engage { border-bottom: 2px solid var(--ink); }
+  .eng-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .eng {
+    padding: 36px 28px;
+    border-right: 2px solid var(--ink);
+    display: flex; flex-direction: column; gap: 18px;
+    background: var(--paper);
+  }
+  .eng:last-child { border-right: none; }
+  .eng.featured { background: var(--ink); color: var(--paper); border-top: 4px solid var(--gold); }
+  .eng .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .eng.featured .label { color: var(--gold); }
+  .eng h4 { font-family: 'Satoshi', sans-serif; margin: 0; font-size: 28px; font-weight: 900; letter-spacing: -0.025em; }
+  .eng .price { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--steel); letter-spacing: 0.04em; }
+  .eng.featured .price { color: rgba(242,238,230,0.7); }
+  .eng .stack-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .eng .stack-list li { font-size: 14.5px; color: var(--ink-2); display: grid; grid-template-columns: 18px 1fr; gap: 8px; }
+  .eng.featured .stack-list li { color: rgba(242,238,230,0.85); }
+  .eng .stack-list li::before { content: ""; width: 8px; height: 8px; background: var(--gold-deep); margin-top: 8px; }
+  .eng.featured .stack-list li::before { background: var(--gold); }
+  .eng .pill { align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 4px 10px; background: var(--gold); color: var(--ink); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+  .eng .btn { align-self: flex-start; margin-top: auto; }
+  .eng:not(.featured) .btn { background: transparent; color: var(--ink); }
+  .eng:not(.featured) .btn:hover { background: var(--ink); color: var(--paper); }
+  .eng.featured .btn { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+  .eng.featured .btn:hover { background: var(--paper); border-color: var(--paper); color: var(--ink); }
+
+  /* ============ FAQ ============ */
+  .faq { border-bottom: 2px solid var(--ink); }
+  .faq-item { border-top: 1px solid var(--rule-strong); }
+  .faq-item:first-child { border-top: none; }
+  .faq-q {
+    width: 100%; background: transparent; border: none;
+    text-align: left; padding: 22px 28px;
+    display: grid; grid-template-columns: 64px 1fr 28px;
+    gap: 18px; align-items: center;
+    color: var(--ink);
+    transition: background .15s;
+  }
+  .faq-q:hover { background: rgba(14,17,22,0.04); }
+  .faq-q .qn { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.14em; }
+  .faq-q .qt { font-family: 'Satoshi', sans-serif; font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+  .faq-q .qx { justify-self: end; font-family: 'JetBrains Mono', monospace; font-size: 18px; color: var(--gold-deep); transition: transform .2s; font-weight: 700; }
+  .faq-item.open .qx { transform: rotate(45deg); }
+  .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-a-inner { overflow: hidden; }
+  .faq-a-inner > div { padding: 0 28px 24px 110px; color: var(--ink-2); font-size: 16px; line-height: 1.6; max-width: 80ch; }
+
+  /* ============ AUDIT CTA ============ */
+  .audit {
+    border-bottom: 2px solid var(--ink);
+    padding: 72px 28px;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: end;
+    background: var(--ink); color: var(--paper);
+    position: relative; overflow: hidden;
+  }
+  .audit::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(242,238,230,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(242,238,230,0.06) 1px, transparent 1px);
+    background-size: 56px 56px; pointer-events: none;
+  }
+  .audit > * { position: relative; }
+  .audit h2 {
+    font-family: 'Satoshi', sans-serif; margin: 0;
+    font-size: clamp(48px, 6.4vw, 100px);
+    font-weight: 900; line-height: 0.94; letter-spacing: -0.04em;
+  }
+  .audit h2 .gold { color: var(--gold); }
+  .audit p { margin: 18px 0 0; max-width: 50ch; font-size: 17px; color: rgba(242,238,230,0.78); }
+  .audit-form {
+    background: var(--paper); color: var(--ink);
+    border: 2px solid var(--gold);
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .audit-form .label { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+  .audit-form input, .audit-form select {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1.5px solid var(--ink);
+    color: var(--ink); font: inherit; font-size: 15px; padding: 8px 0; outline: none;
+  }
+  .audit-form input:focus, .audit-form select:focus { border-bottom-color: var(--gold-deep); }
+  .audit-form .btn { margin-top: 8px; align-self: flex-start; }
+  .audit-form .submitted {
+    background: var(--gold); color: var(--ink); padding: 22px;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.6;
+  }
+  .audit-form .submitted b { font-weight: 800; display: block; margin-bottom: 8px; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
+  .audit-form .note { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
+
+  /* ============ FOOTER ============ */
+  footer { background: var(--paper); padding: 48px 28px 24px; border-top: 2px solid var(--ink); }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .foot-brand .logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .foot-brand p { color: var(--ink-2); font-size: 14px; max-width: 38ch; line-height: 1.55; }
+  .foot-brand .stat-line { margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold-deep); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .foot h5 { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 16px; }
+  .foot ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .foot a { color: var(--ink); font-size: 14px; }
+  .foot a:hover { color: var(--gold-deep); }
+  .foot-bottom {
+    margin-top: 40px; padding-top: 18px;
+    border-top: 1px solid var(--rule-strong);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); font-weight: 500; letter-spacing: 0.06em;
+  }
+  .foot-bottom .sig { color: var(--rust); font-weight: 700; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px) {
+    .topbar-inner { grid-template-columns: 1fr auto; }
+    .nav-meta { display: none; }
+    .nav { display: none; }
+    .proof, .hero-bottom, .duo, .svc-grid, .ai-intro, .ai-grid,
+    .method-grid, .funnel-grid, .founder-grid, .eng-grid, .audit, .foot-grid {
+      grid-template-columns: 1fr;
+    }
+    .proof .divider { display: none; }
+    .hero-extra { border-left: none; border-top: 2px solid var(--ink); padding: 28px 0 0; }
+    .duo > div + div { border-left: none; border-top: 2px solid var(--ink); }
+    .svc, .ai-card, .step, .eng { border-right: none; border-bottom: 2px solid var(--ink); }
+    .svc:last-child, .ai-card:last-child, .step:last-child, .eng:last-child { border-bottom: none; }
+    .funnel-step { border-right: none; border-bottom: 2px solid var(--gold); }
+    .funnel-step::after { display: none; }
+    .funnel-step:last-child { border-bottom: none; }
+    .ai-intro-l, .founder-left { border-right: none; border-bottom: 2px solid var(--ink); }
+    .sec-head { grid-template-columns: 1fr; gap: 8px; padding: 24px; }
+    .audit { padding: 56px 24px; gap: 32px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= TOPBAR ================= -->
+<header class="topbar">
+  <div class="topbar-inner wrap">
+    <a class="brand" href="#top" aria-label="Measure3">
+      <span class="brand-mark">
+        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+          <line x1="3" y1="16" x2="11" y2="4" stroke="#0E1116" stroke-width="2"/>
+          <line x1="8" y1="16" x2="16" y2="4" stroke="#0E1116" stroke-width="2"/>
+          <line x1="13" y1="16" x2="19" y2="7" stroke="#0E1116" stroke-width="2"/>
+        </svg>
+      </span>
+      <span class="brand-word">MEASURE<sup>3</sup></span>
+      <span class="nav-meta"><b>$50M+</b> driven · <b>350+</b> deals/mo</span>
+    </a>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#ai">AI Systems</a>
+      <a href="#method">Method</a>
+      <a href="#founder">Founder</a>
+      <a href="#audit" class="btn gold">Book Audit →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO (proof leads) ================= -->
+<section class="hero">
+  <div class="hero-stamp">FILE 001 · OPERATOR-CONFIDENTIAL</div>
+  <div class="hero-inner wrap">
+    <div class="hero-meta-row">
+      <span><b>MEASURE3 //</b> Operator's consultancy · Home services</span>
+      <span>EST. 2024 · KS</span>
+    </div>
+
+    <div class="proof">
+      <div class="proof-cell">
+        <div class="label"><span>01 — Revenue Driven</span><span class="meta">USD · cumulative</span></div>
+        <div class="num" data-count="50" data-prefix="$">$50<span class="u">M+</span></div>
+        <div class="sub">Driven as Head of a home services lead-gen marketplace.</div>
+      </div>
+      <div class="divider"></div>
+      <div class="proof-cell">
+        <div class="label"><span>02 — Closed Deals</span><span class="meta">/ month · sustained</span></div>
+        <div class="num" data-count="350">350<span class="u">+</span></div>
+        <div class="sub">Sustained run-rate. Not a peak. Not a vanity number.</div>
+      </div>
+    </div>
+
+    <div class="hero-bottom">
+      <div>
+        <h1 class="hero-headline">
+          Built by an <span class="gold">operator.</span> Not an agency.
+        </h1>
+        <p class="hero-deck">
+          Marketing infrastructure for $5M–$50M home services operators. Funnels, paid media, attribution, AI agents.
+        </p>
+        <div class="hero-actions">
+          <a href="#audit" class="btn gold">Book a 30-min audit →</a>
+          <a href="#method" class="text-link">Or see the method</a>
+        </div>
+      </div>
+
+      <div class="hero-extra">
+        <div class="stat">
+          <span class="lab">// AI Speed-to-Lead</span>
+          <span class="val">&lt; 38<span class="acc">s</span></span>
+          <span class="det">Form fill → AI voice contact, 24/7</span>
+        </div>
+        <div class="stat">
+          <span class="lab">// Booked Rate Lift</span>
+          <span class="val">+12<span class="acc">pts</span></span>
+          <span class="det">Post AI agent rollout, typical client</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VERTICALS (focused) ================= -->
+<div class="strip">
+  <span class="strip-label">// Verticals We've Moved Revenue In</span>
+  <div class="strip-track">
+    <span>Solar</span>
+    <span>Roofing</span>
+    <span>HVAC</span>
+    <span>Windows &amp; Doors</span>
+    <span>Bath Remodel</span>
+    <span class="deep">+ Adjacent on request</span>
+  </div>
+</div>
+
+<!-- ================= ICP ================= -->
+<section class="duo">
+  <div class="for">
+    <h3><span class="badge">+</span>Built For <span class="tag">// $5M–$50M Operators</span></h3>
+    <ul>
+      <li><span class="y">+</span><span>You've been burned by an agency that promised leads and delivered impressions.</span></li>
+      <li><span class="y">+</span><span>Your in-house marketing is buying clicks, not pipeline. Close rate stalled.</span></li>
+      <li><span class="y">+</span><span>You buy leads from vendors and want a real audit of what's actually closing.</span></li>
+      <li><span class="y">+</span><span>You can quote your CPL, booked rate, and LTV from memory and want them better.</span></li>
+      <li><span class="y">+</span><span>You're scaling a regional brand into multi-market and need attribution that holds up.</span></li>
+    </ul>
+  </div>
+  <div class="not">
+    <h3 class="no"><span class="badge">×</span>Not For <span class="tag">// Wrong Operator Profile</span></h3>
+    <ul>
+      <li><span class="n">×</span><span>You want a 12-month retainer with a quarterly business review.</span></li>
+      <li><span class="n">×</span><span>You need someone to manage the agency that's managing your ads.</span></li>
+      <li><span class="n">×</span><span>You want pretty dashboards more than booked calls on the calendar.</span></li>
+      <li><span class="n">×</span><span>You measure success by impressions, reach, or engagement.</span></li>
+      <li><span class="n">×</span><span>You want a full-service agency to take it all off your plate. We're a consultancy.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= SERVICES (3 buckets) ================= -->
+<section class="services" id="services">
+  <header class="sec-head">
+    <span class="sec-num">§ 01</span>
+    <span class="sec-title">What We Actually Build</span>
+    <span class="sec-meta">// 3 buckets · 1 system</span>
+  </header>
+  <div class="svc-grid">
+    <article class="svc">
+      <span class="num">01 / ACQUISITION</span>
+      <h4>Move spend into pipeline.</h4>
+      <p>The buy side. Funnels, paid accounts, creative cadence. Built around the buying decision in your vertical, not a generic SaaS template. CPL and CAC are the only success metrics.</p>
+      <div class="legs">
+        <div>Funnel architecture &amp; quiz</div>
+        <div>Paid media (Meta, Google, YT)</div>
+        <div>Offer design + creative ops</div>
+      </div>
+    </article>
+    <article class="svc">
+      <span class="num">02 / CONVERSION</span>
+      <h4>Stop losing deals at 7pm.</h4>
+      <p>The middle. Lead quality systems, AI agents, speed-to-lead, GHL workflows. Bad leads leave the funnel before they hit reps. Good leads get a human voice in under a minute.</p>
+      <div class="legs">
+        <div>Lead scoring &amp; TCPA / TrustedForm</div>
+        <div>AI voice + SMS speed-to-lead</div>
+        <div>Appointment setting &amp; routing</div>
+      </div>
+    </article>
+    <article class="svc">
+      <span class="num">03 / VISIBILITY</span>
+      <h4>See what closed and why.</h4>
+      <p>The back end. Attribution, vendor audits, closed-loop reporting. You see which dollar produced which closed deal, including offline, and which lead vendor sold you the same lead three times.</p>
+      <div class="legs">
+        <div>GA4 / GTM / CAPI / CRM stitching</div>
+        <div>Vendor &amp; lead source audits</div>
+        <div>Per-source margin &amp; LTV</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= AI (3 cards) ================= -->
+<section class="ai" id="ai">
+  <header class="sec-head">
+    <span class="sec-num">§ 02</span>
+    <span class="sec-title">AI Systems For Operators</span>
+    <span class="sec-meta">// Trained on your vertical · wired to your CRM</span>
+  </header>
+
+  <div class="ai-intro">
+    <div class="ai-intro-l">
+      <h3 class="ai-h">Most AI in home services is a chatbot bolted onto a website. <span class="gold">Ours runs the funnel.</span></h3>
+      <p>We build the AI layer that sits between your media spend and your sales team. It qualifies, scores, books, and reactivates. Trained on your offer, your service area, your historical close data.</p>
+    </div>
+    <div class="ai-intro-r">
+      <div class="ai-stat">
+        <div class="label">Median Speed-to-Lead</div>
+        <div class="big">&lt; 38<span class="u">s</span></div>
+        <div class="sub">Form fill → AI voice contact, 24/7</div>
+      </div>
+      <div class="ai-stat">
+        <div class="label">Off-Hours Bookings Recovered</div>
+        <div class="big">31<span class="u">%</span></div>
+        <div class="sub">Leads after 6pm, booked before morning</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ai-grid">
+    <article class="ai-card">
+      <span class="ai-num">A1 / VOICE &amp; SMS</span>
+      <h4>AI Agents on the front line.</h4>
+      <p>Voice and SMS agents that pick up before your team can. Qualify, book, and reschedule in your brand voice. Live-transfer the hot ones to closers.</p>
+      <ul class="ai-list">
+        <li>Sub-minute outbound on every form fill</li>
+        <li>Live-transfer to reps on hot signals</li>
+        <li>Recordings + transcripts in CRM</li>
+      </ul>
+      <div class="ai-foot">OUTPUT — <b>+12pt booked rate, typical</b></div>
+    </article>
+    <article class="ai-card featured-ai">
+      <span class="ai-num">A2 / QUALIFICATION</span>
+      <h4>Scoring trained on your closes.</h4>
+      <p>Every inbound lead enriched, scored, and routed in under 60 seconds. Disqualified leads never hit your reps. Trained on your historical close data, not a generic prompt.</p>
+      <ul class="ai-list">
+        <li>Roof age, ownership, intent signals</li>
+        <li>Service-area &amp; financing fit checks</li>
+        <li>Predictive close-probability score</li>
+      </ul>
+      <div class="ai-foot">OUTPUT — <b>only A &amp; B leads reach reps</b></div>
+    </article>
+    <article class="ai-card">
+      <span class="ai-num">A3 / COPILOT</span>
+      <h4>A private assistant on your numbers.</h4>
+      <p>Ask it "what's wrong with HVAC this week" and get a real answer with the source rows. Daily anomaly alerts. Built for owners, not analysts.</p>
+      <ul class="ai-list">
+        <li>Natural-language queries on your CRM</li>
+        <li>Daily alerts on CPL, show, close</li>
+        <li>Slack / SMS · no dashboard archaeology</li>
+      </ul>
+      <div class="ai-foot">OUTPUT — <b>owner sees the issue same day</b></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="method" id="method">
+  <header class="sec-head">
+    <span class="sec-num">§ 03</span>
+    <span class="sec-title">The 90-Day Operator Buildout</span>
+    <span class="sec-meta">// Diagnose · Build · Run · Hand Off</span>
+  </header>
+  <div class="method-grid">
+    <div class="step">
+      <span class="step-num">PHASE 01 · DAYS 1–14</span>
+      <h4>Diagnose</h4>
+      <div class="body">Full audit of spend, funnels, lead vendors, CRM, attribution. We benchmark CPL, booked rate, show rate, close rate, and LTV per channel. No assumptions.</div>
+      <div class="out">DELIVERABLE — <b>Operator Audit Memo</b></div>
+    </div>
+    <div class="step">
+      <span class="step-num">PHASE 02 · DAYS 15–45</span>
+      <h4>Build</h4>
+      <div class="body">Funnels, tracking, paid accounts, GHL workflows, lead quality filters, AI agents. Built on your stack, not ours. Documented so your team can run it.</div>
+      <div class="out">DELIVERABLE — <b>Live Infrastructure</b></div>
+    </div>
+    <div class="step">
+      <span class="step-num">PHASE 03 · DAYS 46–75</span>
+      <h4>Run</h4>
+      <div class="body">We buy media, manage creative cadence, optimize routing, kill bad lead sources weekly. You see the dashboard daily. No black boxes.</div>
+      <div class="out">DELIVERABLE — <b>Optimized Run-Rate</b></div>
+    </div>
+    <div class="step">
+      <span class="step-num">PHASE 04 · DAYS 76–90</span>
+      <h4>Hand Off</h4>
+      <div class="body">SOPs, dashboards, hiring scorecards for in-house roles. Fractional retainer optional. Most clients don't need us forever and we say so.</div>
+      <div class="out">DELIVERABLE — <b>Runbook + Scorecards</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUNNEL (the moneyshot) ================= -->
+<section class="funnel">
+  <header class="funnel-head">
+    <h3>The 90-day funnel, end to end.</h3>
+    <span class="meta">// Screenshot this · send to your boss</span>
+  </header>
+  <div class="funnel-grid">
+    <div class="funnel-step">
+      <div class="stage">01 · Speed-to-Lead</div>
+      <div class="v">&lt; 38s</div>
+      <div class="lift"><b>24/7</b> · voice + SMS contact</div>
+    </div>
+    <div class="funnel-step">
+      <div class="stage">02 · Booked Rate</div>
+      <div class="v">38%</div>
+      <div class="lift"><b>↑ 12 pts</b> post AI rollout</div>
+    </div>
+    <div class="funnel-step">
+      <div class="stage">03 · Show Rate</div>
+      <div class="v">71%</div>
+      <div class="lift"><b>↑ 9 pts</b> w/ reminder cadence</div>
+    </div>
+    <div class="funnel-step">
+      <div class="stage">04 · Close Rate</div>
+      <div class="v">22%</div>
+      <div class="lift"><b>↑ 6 pts</b> after lead scoring</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOUNDER ================= -->
+<section class="founder" id="founder">
+  <header class="sec-head">
+    <span class="sec-num">§ 04</span>
+    <span class="sec-title">Who's Running This</span>
+    <span class="sec-meta">// Founder track record</span>
+  </header>
+  <div class="founder-grid">
+    <div class="founder-left">
+      <p class="pull">
+        <span class="q">"</span>Most consultants in this space are <span class="gold">ex-agency</span> or <span class="gold">ex-contractor</span>. I built the machine. I'm not learning your vertical on your dime.<span class="q">"</span>
+      </p>
+      <div class="by">
+        <div class="av">KS</div>
+        <div>
+          <div><b>Kyle</b> · Founder, Measure3</div>
+          <div style="color:var(--steel); margin-top:2px;">Operator. P&amp;L owner. Ex-marketplace.</div>
+        </div>
+      </div>
+    </div>
+    <div class="founder-right">
+      <div class="resume">
+        <div class="role">Head of Lead-Gen Marketplace</div>
+        <div class="org">// Home services · multi-vertical</div>
+        <div class="yrs">2018 — 2024 · 6 yrs</div>
+        <div class="desc">Ran a multi-vertical home services lead marketplace. Owned the P&amp;L, the media buy, the lead QA, and the close-loop attribution. Drove $50M+ in revenue and 350+ closed deals/month, sustained.</div>
+        <div class="kpis">
+          <div><b>$50M+</b> revenue driven</div>
+          <div><b>350+</b> deals / mo</div>
+          <div><b>11</b> verticals</div>
+        </div>
+      </div>
+      <div class="resume">
+        <div class="role">Measure3</div>
+        <div class="org">// Operator's consultancy</div>
+        <div class="yrs">2024 — present</div>
+        <div class="desc">Bringing the same playbook to operators running $5M–$50M home services businesses. Direct engagement, no junior team behind a portal.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ENGAGE ================= -->
+<section class="engage" id="engage">
+  <header class="sec-head">
+    <span class="sec-num">§ 05</span>
+    <span class="sec-title">How We Engage</span>
+    <span class="sec-meta">// Three doors. One operator.</span>
+  </header>
+  <div class="eng-grid">
+    <div class="eng">
+      <span class="label">Engagement 01</span>
+      <h4>Operator Audit</h4>
+      <div class="price">FIXED SCOPE · 2 WEEKS</div>
+      <ul class="stack-list">
+        <li>Spend, funnel, vendor &amp; CRM audit</li>
+        <li>Benchmarks vs. vertical comps</li>
+        <li>Prioritized fix list with $ impact</li>
+        <li>90-min walkthrough with your team</li>
+      </ul>
+      <a class="btn" href="#audit">Start an audit →</a>
+    </div>
+    <div class="eng featured">
+      <span class="pill">Most Operators Start Here</span>
+      <span class="label">Engagement 02</span>
+      <h4>90-Day Buildout</h4>
+      <div class="price">FIXED SCOPE · 90 DAYS</div>
+      <ul class="stack-list">
+        <li>Funnel + paid + tracking + GHL + AI</li>
+        <li>Lead quality &amp; scoring system</li>
+        <li>Direct media buying for 60 days</li>
+        <li>Runbook + dashboards on handoff</li>
+      </ul>
+      <a class="btn" href="#audit">Book intro →</a>
+    </div>
+    <div class="eng">
+      <span class="label">Engagement 03</span>
+      <h4>Fractional CMO</h4>
+      <div class="price">MONTHLY · CAPPED SEATS</div>
+      <ul class="stack-list">
+        <li>Strategy + ops cadence</li>
+        <li>Vendor &amp; agency oversight</li>
+        <li>Hiring &amp; scorecard support</li>
+        <li>Weekly call · monthly board read</li>
+      </ul>
+      <a class="btn" href="#audit">Check availability →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ (cost moved up) ================= -->
+<section class="faq">
+  <header class="sec-head">
+    <span class="sec-num">§ 06</span>
+    <span class="sec-title">Questions Operators Actually Ask</span>
+    <span class="sec-meta">// Click to expand</span>
+  </header>
+  <div class="faq-list">
+    <div class="faq-item open">
+      <button class="faq-q"><span class="qn">Q · 01</span><span class="qt">Are you an agency?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>No. Measure3 is a consultancy. We build, run, and hand off. We don't sit on retainer pushing deliverables to justify the invoice. If your team can run the system after 90 days, that's the goal.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 02</span><span class="qt">What does it cost?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>Audit is fixed-fee. 90-day buildout is fixed-fee, scoped to your stack. Fractional CMO is a monthly retainer with capped seats. We share numbers on the intro call. No surprise pricing.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 03</span><span class="qt">Is the AI just a chatbot on our website?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>No. The AI sits between your spend and your sales team. It qualifies leads, books appointments by voice and SMS in under a minute, runs reactivation against your aged CRM, and feeds attribution gaps. The chatbot on the contact page is the dumbest possible use of this technology and we don't build it.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 04</span><span class="qt">Will AI voice agents replace our reps?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>No. The AI handles first-touch, qualification, and booking, then live-transfers hot leads to your closers. Your reps stop burning hours on tire-kickers and start every conversation with a qualified, booked appointment. Headcount usually stays flat. Revenue per rep goes up.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 05</span><span class="qt">What size company is this for?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>Typical client is a $5M–$50M home services operator. Below that, the math on a buildout rarely works. Above that, you usually have an in-house team and we plug in fractionally.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 06</span><span class="qt">Do you guarantee leads?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>No. Anyone guaranteeing leads in home services is either selling you recycled internet leads or about to. We commit to the system and the cadence. The numbers come from the system working.</div></div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q"><span class="qn">Q · 07</span><span class="qt">We already buy leads from vendors. Can you help?</span><span class="qx">+</span></button>
+      <div class="faq-a"><div class="faq-a-inner"><div>Yes. The vendor audit is one of the highest-leverage engagements. Most operators are paying premium prices for shared leads sold three or four times. We audit by source, by close rate, by margin per source.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIT CTA (form: 4 fields, not 5) ================= -->
+<section class="audit" id="audit">
+  <div>
+    <h2>We measure.<br><span class="gold">Others guess.</span></h2>
+    <p>Book a 30-minute operator audit. You'll walk away with three things you can fix this week, whether or not we work together. Operators only — we don't take agency-on-agency calls.</p>
+  </div>
+  <form class="audit-form" id="auditForm" autocomplete="off">
+    <div>
+      <div class="label">Name</div>
+      <input type="text" name="name" required placeholder="Kyle Smith" />
+    </div>
+    <div>
+      <div class="label">Vertical</div>
+      <select name="vertical" required>
+        <option value="">Select</option>
+        <option>Solar</option><option>Roofing</option><option>HVAC</option>
+        <option>Windows &amp; Doors</option><option>Bath Remodel</option><option>Other</option>
+      </select>
+    </div>
+    <div>
+      <div class="label">Work email</div>
+      <input type="email" name="email" required placeholder="kyle@yourbusiness.com" />
+    </div>
+    <div>
+      <div class="label">What's broken right now</div>
+      <input type="text" name="problem" placeholder="CPL up 60% YoY · close rate stalled at 14% ..." />
+    </div>
+    <button class="btn gold" type="submit">Request audit slot →</button>
+    <div class="note">// Response within 1 business day · Operators only</div>
+  </form>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="foot-grid wrap" style="padding:0;">
+    <div class="foot-brand">
+      <div class="logo">
+        <span class="brand-mark">
+          <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+            <line x1="3" y1="16" x2="11" y2="4" stroke="#0E1116" stroke-width="2"/>
+            <line x1="8" y1="16" x2="16" y2="4" stroke="#0E1116" stroke-width="2"/>
+            <line x1="13" y1="16" x2="19" y2="7" stroke="#0E1116" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="brand-word">MEASURE<sup>3</sup></span>
+      </div>
+      <p>Marketing infrastructure for home services operators. Built by an operator, not an agency.</p>
+      <div class="stat-line">$50M+ Driven · 350+ Deals/Mo</div>
+    </div>
+    <div class="foot">
+      <h5>Site</h5>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#ai">AI Systems</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#engage">Engage</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h5>Verticals</h5>
+      <ul>
+        <li><a href="#">Solar</a></li>
+        <li><a href="#">Roofing</a></li>
+        <li><a href="#">HVAC</a></li>
+        <li><a href="#">Windows · Bath</a></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#audit">Book audit</a></li>
+        <li><a href="mailto:kyle@measure3.com">kyle@measure3.com</a></li>
+        <li><a href="#">LinkedIn / Kyle</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom wrap" style="padding-left:0; padding-right:0;">
+    <span>© 2026 MEASURE3 · OPERATOR'S CONSULTANCY</span>
+    <span class="sig">// PRECISION OVER GUESSWORK</span>
+    <span>MEASURE3.COM</span>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item .faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Form
+  const form = document.getElementById('auditForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form));
+    form.innerHTML = `
+      <div class="submitted">
+        <b>// Request received</b>
+        <div>Name: ${data.name || '—'}</div>
+        <div>Vertical: ${data.vertical || '—'}</div>
+        <div style="margin-top:10px;">We'll be in touch within 1 business day. If you're outside our ICP, we'd rather tell you straight than waste your time.</div>
+      </div>`;
+  });
+
+  // Smooth anchors
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      const y = t.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  // Stat count-up (proof block)
+  const animateCount = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const prefix = el.dataset.prefix || '';
+    const unitHTML = el.querySelector('.u')?.outerHTML || '';
+    const dur = 1100, start = performance.now();
+    const tick = (t) => {
+      const p = Math.min((t - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const n = Math.round(target * eased);
+      el.innerHTML = prefix + n + unitHTML;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        animateCount(e.target);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.proof .num[data-count]').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
