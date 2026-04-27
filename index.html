@@ -58,8 +58,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --paper: #F2EEE6;        /* warm field-manual paper */
     --ink: #0E1116;
     --ink-2: #1F242C;
-    --gold: #C8961F;          /* less polished than D4AF37 */
-    --gold-deep: #8E6911;
+    --gold: #FF6B00;          /* secondary accent — vivid orange */
+    --gold-deep: #C24F00;     /* deeper orange for hover / text-on-paper */
     --rust: #B7411F;
     --steel: #6E7480;
     --light: #D5D0C4;
@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
   .svc { padding: 36px 28px; border-right: 2px solid var(--ink); display: flex; flex-direction: column; gap: 14px; min-height: 280px; transition: background .15s; background: var(--paper); }
   .svc:last-child { border-right: none; }
-  .svc:hover { background: rgba(200,150,31,0.07); }
+  .svc:hover { background: rgba(255,107,0,0.07); }
   .svc .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.14em; }
   .svc h4 { font-family: 'Satoshi', sans-serif; margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -0.02em; }
   .svc .what { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
@@ -204,7 +204,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .ai-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 2px solid var(--ink); }
   .ai-card { padding: 32px 28px; border-right: 2px solid var(--ink); display: flex; flex-direction: column; gap: 14px; min-height: 320px; transition: background .15s; }
   .ai-card:last-child { border-right: none; }
-  .ai-card:hover { background: rgba(200,150,31,0.07); }
+  .ai-card:hover { background: rgba(255,107,0,0.07); }
   .ai-card.featured-ai { background: var(--gold); }
   .ai-card.featured-ai:hover { background: var(--gold); }
   .ai-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.14em; }
