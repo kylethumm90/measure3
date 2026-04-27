@@ -92,7 +92,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .topbar { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 2px solid var(--ink); }
   .topbar-inner { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 28px; height: 64px; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand-mark { width: 28px; height: 28px; border: 1.5px solid var(--ink); display:grid; place-items:center; }
+  /* logomark PNG — light backgrounds only (paper); never use on --ink sections */
+  .brand-mark { display: inline-flex; align-items: center; }
+  .brand-mark img { display: block; height: 24px; width: auto; }
+  .foot-brand .brand-mark img { height: 28px; }
   .brand-word { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; }
   .brand-word sup { color: var(--gold); }
   .nav-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); letter-spacing: 0.06em; border-left: 1px solid var(--rule-strong); padding-left: 16px; display: flex; gap: 18px; flex-wrap: wrap; }
@@ -365,11 +368,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="topbar-inner wrap">
     <a class="brand" href="#top" aria-label="Measure3">
       <span class="brand-mark">
-        <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-          <line x1="3" y1="16" x2="11" y2="4" stroke="#0E1116" stroke-width="2"/>
-          <line x1="8" y1="16" x2="16" y2="4" stroke="#0E1116" stroke-width="2"/>
-          <line x1="13" y1="16" x2="19" y2="7" stroke="#0E1116" stroke-width="2"/>
-        </svg>
+        <img src="measure3-logomark.png" alt="Measure3" />
       </span>
       <span class="brand-word">MEASURE<sup>3</sup></span>
       <span class="nav-meta"><b>$50M+</b> driven · <b>350+</b> deals/mo</span>
@@ -815,11 +814,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="foot-brand">
       <div class="logo">
         <span class="brand-mark">
-          <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
-            <line x1="3" y1="16" x2="11" y2="4" stroke="#0E1116" stroke-width="2"/>
-            <line x1="8" y1="16" x2="16" y2="4" stroke="#0E1116" stroke-width="2"/>
-            <line x1="13" y1="16" x2="19" y2="7" stroke="#0E1116" stroke-width="2"/>
-          </svg>
+          <img src="measure3-logomark.png" alt="Measure3" />
         </span>
         <span class="brand-word">MEASURE<sup>3</sup></span>
       </div>
