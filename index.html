@@ -36,7 +36,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "name": "Measure3 Consulting, LLC",
   "description": "Operator's consultancy. Marketing infrastructure for $5M–$50M home services operators: funnels, paid media, attribution, AI agents.",
   "url": "https://measure3.com",
-  "email": "measure3consulting@gmail.com",
+  "email": "kyle@measure3.co",
   "address": { "@type": "PostalAddress", "addressLocality": "Huntsville", "addressRegion": "AL", "addressCountry": "US" },
   "areaServed": { "@type": "Place", "name": "United States" },
   "priceRange": "$$$",
@@ -85,8 +85,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .brand-mark img { display: block; height: 24px; width: auto; }
   .brand-word { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; }
   .brand-word sup { color: var(--gold); }
-  .nav-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-2); letter-spacing: 0.06em; border-left: 1px solid var(--rule-strong); padding-left: 16px; display: flex; gap: 18px; flex-wrap: wrap; }
-  .nav-meta b { color: var(--ink); font-weight: 700; }
   .nav { display: flex; gap: 22px; align-items: center; }
   .nav a { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ink-2); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
   .nav a:hover { color: var(--ink); }
@@ -99,7 +97,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   /* HERO — single screen, two columns */
   main { flex: 1; display: flex; flex-direction: column; }
-  .hero { flex: 1; position: relative; overflow: hidden; border-bottom: 2px solid var(--ink); }
+  .hero { position: relative; overflow: hidden; border-bottom: 2px solid var(--ink); }
   .hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(14,17,22,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(14,17,22,0.06) 1px, transparent 1px); background-size: 56px 56px; pointer-events: none; }
   .hero-stamp { position: absolute; top: 18px; right: 28px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--rust); letter-spacing: 0.18em; text-transform: uppercase; border: 1.5px solid var(--rust); padding: 4px 10px; transform: rotate(2deg); opacity: 0.85; z-index: 1; }
   .hero-inner { position: relative; padding: 40px 28px 32px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 56px; align-items: stretch; }
@@ -123,9 +121,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .actions { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; margin-top: auto; padding-top: 8px; }
   .text-link { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--ink); border-bottom: 1.5px solid var(--ink); padding-bottom: 2px; }
   .text-link:hover { color: var(--gold-deep); border-color: var(--gold-deep); }
-  .verticals-line { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); letter-spacing: 0.08em; text-transform: uppercase; }
-  .verticals-line b { color: var(--ink); font-weight: 700; }
-
   /* form card */
   .form-card { background: var(--paper); border: 2px solid var(--gold); padding: 24px; display: flex; flex-direction: column; gap: 14px; align-self: stretch; }
   .form-card .form-head { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border-bottom: 1px solid var(--rule-strong); padding-bottom: 10px; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
@@ -140,6 +135,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .form-card .submitted { background: var(--gold); color: var(--ink); padding: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12.5px; line-height: 1.55; }
   .form-card .submitted b { font-weight: 800; display: block; margin-bottom: 6px; letter-spacing: 0.1em; text-transform: uppercase; font-size: 11px; }
 
+  /* WHAT I DO */
+  .what-i-do { background: var(--paper); border-bottom: 2px solid var(--ink); }
+  .wid-head { padding: 16px 28px; border-bottom: 2px solid var(--ink); }
+  .wid-head .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--rust); font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+  .wid-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .wid { padding: 28px; border-right: 2px solid var(--ink); }
+  .wid:last-child { border-right: none; }
+  .wid h3 { font-family: 'Satoshi', 'Inter', sans-serif; margin: 0 0 10px; font-size: 24px; font-weight: 900; letter-spacing: -0.02em; }
+  .wid p { margin: 0; font-size: 14.5px; color: var(--ink-2); line-height: 1.55; max-width: 36ch; }
+
   /* FOOTER — thin */
   footer { border-top: 2px solid var(--ink); background: var(--paper); }
   .foot-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 28px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--steel); letter-spacing: 0.06em; }
@@ -149,11 +154,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   /* RESPONSIVE */
   @media (max-width: 980px) {
     .topbar-inner { grid-template-columns: 1fr auto; }
-    .nav-meta { display: none; }
-    .nav a:not(.btn) { display: none; }
     .hero-inner { grid-template-columns: 1fr; gap: 32px; padding: 32px 28px 32px; }
     .stats { grid-template-columns: 1fr; }
     .stats .divider { height: 2px; width: 100%; }
+    .wid-grid { grid-template-columns: 1fr; }
+    .wid { border-right: none; border-bottom: 2px solid var(--ink); }
+    .wid:last-child { border-bottom: none; }
   }
   @media (max-width: 600px) {
     .hero-stamp { display: none; }
@@ -168,10 +174,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a class="brand" href="/" aria-label="Measure3">
       <span class="brand-mark"><img src="measure3-logomark.png" alt="Measure3" /></span>
       <span class="brand-word">MEASURE<sup>3</sup></span>
-      <span class="nav-meta"><b>$50M+</b> driven · <b>350+</b> deals/mo</span>
     </a>
     <nav class="nav">
-      <a href="/lander.html">Operator Brief</a>
       <a href="#audit" class="btn gold">Book Audit →</a>
     </nav>
   </div>
@@ -184,7 +188,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <div class="hero-left">
       <div class="meta-row">
-        <span><b>MEASURE3 //</b> Operator's consultancy · Home services</span>
+        <span><b>MEASURE3 //</b> Home Services · Solar · Roofing · HVAC · Windows · Bath</span>
         <span>EST. 2024 · KS</span>
       </div>
 
@@ -192,7 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="stat-cell">
           <div class="label">Revenue Driven</div>
           <div class="num">$50<span class="u">M+</span></div>
-          <div class="sub">Driven as Head of a home services lead-gen marketplace.</div>
+          <div class="sub">Driven running paid media for a home services lead-gen marketplace.</div>
         </div>
         <div class="divider"></div>
         <div class="stat-cell">
@@ -203,44 +207,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
 
       <h1 class="headline">Built by an <span class="gold">operator.</span> Not an agency.</h1>
-      <p class="deck">Marketing infrastructure for $5M–$50M home services operators. Funnels, paid media, attribution, AI agents.</p>
+      <p class="deck">Marketing, automation, and AI workflows for $5M–$50M home services operators.</p>
 
       <div class="actions">
         <a href="#audit" class="btn gold">Book a 30-min audit →</a>
-        <a href="/lander.html" class="text-link">Read the full operator brief →</a>
       </div>
-      <div class="verticals-line"><b>Verticals //</b> Solar · Roofing · HVAC · Windows &amp; Doors · Bath Remodel</div>
     </div>
 
     <aside class="form-card" id="audit" aria-labelledby="audit-h">
       <div class="form-head"><span>// Book Your Audit</span><span class="meta">30 MIN · NO PITCH</span></div>
-      <h2 id="audit-h">We measure.<br><span class="gold">Others guess.</span></h2>
+      <h2 id="audit-h">Book the audit.</h2>
       <form id="auditForm" autocomplete="off">
         <div>
           <div class="field-label">Name</div>
           <input type="text" name="name" required placeholder="Kyle Smith" />
         </div>
         <div>
-          <div class="field-label">Vertical</div>
-          <select name="vertical" required>
-            <option value="">Select</option>
-            <option>Solar</option><option>Roofing</option><option>HVAC</option>
-            <option>Windows &amp; Doors</option><option>Bath Remodel</option><option>Other</option>
-          </select>
-        </div>
-        <div>
           <div class="field-label">Work email</div>
           <input type="email" name="email" required placeholder="kyle@yourbusiness.com" />
         </div>
         <div>
-          <div class="field-label">What's broken right now</div>
+          <div class="field-label">What's broken</div>
           <input type="text" name="problem" placeholder="CPL up 60% YoY · close rate stalled at 14% ..." />
         </div>
-        <button class="btn gold" type="submit" id="submitBtn">Request audit slot →</button>
+        <button class="btn gold" type="submit" id="submitBtn">Book my audit →</button>
         <div class="note">// Response within 1 business day · Operators only</div>
       </form>
     </aside>
 
+  </div>
+</section>
+
+<section class="what-i-do">
+  <header class="wid-head"><span class="num">// What I Do</span></header>
+  <div class="wid-grid">
+    <article class="wid">
+      <h3>Marketing</h3>
+      <p>Paid media and funnels that pay back. Meta, Google, landing pages, creative that converts cold traffic.</p>
+    </article>
+    <article class="wid">
+      <h3>Automation</h3>
+      <p>CRM, lead routing, follow-up sequences. Stop losing deals between the cracks.</p>
+    </article>
+    <article class="wid">
+      <h3>AI Workflows</h3>
+      <p>Custom agents and automations that handle the work your team doesn't have time for.</p>
+    </article>
   </div>
 </section>
 </main>
@@ -249,7 +261,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <div class="foot-inner wrap">
     <span>© 2026 MEASURE3 · OPERATOR'S CONSULTANCY</span>
     <span class="sig">// PRECISION OVER GUESSWORK</span>
-    <span><a href="mailto:measure3consulting@gmail.com">measure3consulting@gmail.com</a></span>
+    <span><a href="mailto:kyle@measure3.co">kyle@measure3.co</a></span>
   </div>
 </footer>
 
@@ -270,7 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   // Audit form: POST to GHL webhook, fall back to mailto.
   // KYLE: Replace WEBHOOK_URL with your GoHighLevel webhook URL.
   var WEBHOOK_URL = 'REPLACE_WITH_GHL_WEBHOOK_URL';
-  var FALLBACK_EMAIL = 'measure3consulting@gmail.com';
+  var FALLBACK_EMAIL = 'kyle@measure3.co';
   var form = document.getElementById('auditForm');
   if (form) {
     form.addEventListener('submit', function(e) {
@@ -284,7 +296,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           '<div class="submitted">' +
             '<b>// Request received</b>' +
             '<div>Name: ' + (data.name || '—') + '</div>' +
-            '<div>Vertical: ' + (data.vertical || '—') + '</div>' +
+            '<div>Email: ' + (data.email || '—') + '</div>' +
             '<div style="margin-top:8px;">We\'ll be in touch within 1 business day. If you\'re outside our ICP, we\'d rather tell you straight than waste your time.</div>' +
           '</div>';
       }
@@ -293,7 +305,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         var subject = encodeURIComponent('Operator Audit Request — ' + (data.name || ''));
         var body = encodeURIComponent(
           'Name: ' + (data.name || '') + '\n' +
-          'Vertical: ' + (data.vertical || '') + '\n' +
           'Email: ' + (data.email || '') + '\n' +
           'What\'s broken: ' + (data.problem || '')
         );
